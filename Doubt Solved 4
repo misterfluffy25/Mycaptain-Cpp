@@ -1,0 +1,40 @@
+Written By - Kunwar Yashaswee Chhaunker
+
+Problem - -
+
+Number as sum of two prime numbers ......this code isn't running
+
+Solution - 
+
+#include<iostream>
+using namespace std;
+
+//Function to check prime number
+int checkprime(int number) {
+   int i;
+   int flag=1; 
+   
+   for(i=2;i<=number/2;i++) {
+      if(number%i==0) {
+         flag=0;
+         break;
+      }
+   }
+   return flag;
+}
+
+//Main Function
+int main(){
+   int i, number;
+   cout << "Enter a Positive number: "<<endl;
+   cin >> number;
+   
+   for(i=2;i<=number/2;i++){
+      if (checkprime(i)){
+         if (checkprime(number-i)){
+            cout<<number-i<<"+"<<i<<"="<<number<<endl;
+         }
+      }
+   }
+   return 0;
+}
