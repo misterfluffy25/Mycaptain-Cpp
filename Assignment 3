@@ -1,0 +1,48 @@
+Written By - Kunwar Yashaswee Chhaunker
+
+Problem -
+
+Write a C++ program where we check if a person is eligible to vote or not. We ask the user for an input of their age and give them an output which states whether or not they are eligible.
+
+SOlution - 
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+    int age, adnumber;
+    string name;
+    cout<<"Enter the name of the Candidate: "<<endl;
+        cin>>name;
+    cout<<"Enter your Age: "<<endl;
+       cin>>age;
+        if(age>17){
+            cout<<"Eligible to vote"<<endl;
+            cout<<"Choose your Representative wisely"<<endl;
+                } 
+        else{
+            cout<<"Not Eligible to Vote"<<endl;
+            cout<<"Wait for: "<<18 - age<<" Years to Vote. Thanks !"<<endl;
+            }
+     return 0;
+}
+
+Output - 
+
+1. If true - 
+
+Enter the name of the Candidate: 
+yash
+Enter your Age:
+18
+Eligible to vote
+Choose your Representative wisely
+
+2. If false - 
+
+Enter the name of the Candidate: 
+hello
+Enter your Age: 
+12
+Not Eligible to Vote
+Wait for: 6Years to Vote. Thanks !
