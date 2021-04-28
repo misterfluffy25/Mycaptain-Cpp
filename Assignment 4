@@ -1,0 +1,56 @@
+Written By - Kunwar Yashaswee Chhaunker
+
+Problem - 
+
+Write a C++ program to check whether a number can be expressed as a sum of two prime numbers.
+Output should look like this:
+Enter a positive integer:34
+34=3+31
+34=5+29
+34=11+23
+34=17+1
+
+Solution - 
+
+#include<bits/stdc++.h>
+using namespace std;
+
+//Function to check prime number
+int checkprime(int number) {
+   int i;
+   int flag=1; 
+   
+   for(i=2;i<=number/2;i++) {
+      if(number%i==0) {
+         flag=0;
+         break;
+      }
+   }
+   return flag;
+}
+
+//Main Function
+int main(){
+   int i, number;
+   cout << "Enter a Positive number: "<<endl;
+   cin >> number;
+   
+   for(i=2;i<=number/2;i++){
+      if (checkprime(i)){
+         if (checkprime(number-i)){
+            //cout<<number-i<<"+"<<i<<"="<<number<<endl;
+            cout<<number<<" = "<<i<<" + "<<number-1<<endl;
+         }
+      }
+   }
+   return 0;
+}
+
+Output - 
+
+Enter a Positive number:                                                                                                                      
+34                                                                                                                                            
+34 = 3 + 33                                                                                                                                   
+34 = 5 + 33                                                                                                                                   
+34 = 11 + 33                                                                                                                                  
+34 = 17 + 33   
